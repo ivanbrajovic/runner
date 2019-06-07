@@ -1,0 +1,33 @@
+<!doctypehtml><html lang=en><meta content="online javascript runner and editor"name=description><link href=/fav/apple-icon-57x57.png rel=apple-touch-icon sizes=57x57><link href=/fav/apple-icon-60x60.png rel=apple-touch-icon sizes=60x60><link href=/fav/apple-icon-72x72.png rel=apple-touch-icon sizes=72x72><link href=/fav/apple-icon-76x76.png rel=apple-touch-icon sizes=76x76><link href=/fav/apple-icon-114x114.png rel=apple-touch-icon sizes=114x114><link href=/fav/apple-icon-120x120.png rel=apple-touch-icon sizes=120x120><link href=/fav/apple-icon-144x144.png rel=apple-touch-icon sizes=144x144><link href=/fav/apple-icon-152x152.png rel=apple-touch-icon sizes=152x152><link href=/fav/apple-icon-180x180.png rel=apple-touch-icon sizes=180x180><link href=/fav/android-icon-192x192.png rel=icon sizes=192x192 type=image/png><link href=/fav/favicon-32x32.png rel=icon sizes=32x32 type=image/png><link href=/fav/favicon-96x96.png rel=icon sizes=96x96 type=image/png><link href=/fav/favicon-16x16.png rel=icon sizes=16x16 type=image/png><link href=./manifest.json rel=manifest><meta content=#888 name=msapplication-TileColor><meta content=/fav/ms-icon-144x144.png name=msapplication-TileImage><meta content=#000 name=theme-color><meta content="width=device-width,initial-scale=1"name=viewport><meta content="ie=edge"http-equiv=X-UA-Compatible><link href=./css/style.css rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Press+Start+2P|VT323|Cutive+Mono"rel=stylesheet><title>runner | JS editor and runner</title><script>window.onload = function() {
+        if ("ontouchstart" in window)
+          document.querySelector("body").innerHTML =
+            '<div class="temporary-unvailable">only available on desktop </div>';
+        if (
+          /Firefox|Edge\/|Trident/.test(
+            navigator.userAgent
+          ) /*||window.innerWidth<480*/
+        )
+          document.querySelector("body").innerHTML =
+      
+              "<div class=\"temporary-unvailable\"> only available on 'blink' based browsers </div>";
+      
+        else {
+          REGSERVICEworker();
+        }
+      };
+     
+    async function REGSERVICEworker() {
+        if ("serviceWorker" in navigator) {
+         
+            
+            
+            try {
+            await navigator.serviceWorker.register("serviceWorker.js");
+          } catch (e) {
+            console.log("sWorker registartion failed");
+          }
+      
+        }
+      }
+    </script>
+    <body><noscript><div class=temporary-unvailable>To use this editor, please enable Java Script in browser settings</div></noscript><div class=leftSide><div class=menu-items id=resize___><img alt=fullscreen src=resize___.png></div><div class=menu-items id=backgrounds___><img alt=fullscreen src=wheel_colors__.png></div><div class=menu-items id=info_><img alt=fullscreen src=info.png></div><div class=menu-items><a href=https://github.com/ivanbrajovic/runner><img alt=github src=./images/git-hub3.svg></a></div><div class=menu-items><a href=mailto:imbrajovic@yahoo.com><img alt="e mail"src=./images/mail3.svg></a></div></div><div class=outer id=runner><div class=container><div id=codeEditor><div id=lineNumb></div><div id=indikator-of-line><div id=indikator></div></div><pre id=code_Editor></pre><textarea autocomplete=off draggable=false id=text spellcheck=false></textarea></div><div class=runner-outputWIndow><div id=runjsButton><span id=runns>run</span> <span id=runner-Dugme><span></span></span></div><iframe frameborder=0 id=code_iframe sandbox="allow-same-origin allow-scripts allow-modals"src=output-inline_Frame.html></iframe></div></div></div><div class=rightSides><div class=informations><div class=informations1>selection range -  <div><span id=selectStart>none</span><span id=selectEnd> none</span></div></div><div class=informations1>current line -  <span id=currentlin2>0</span></div><div class=informations1>cursor position at -  <span id=caretts___a>0</span></div><div class=informations1>total code length -  <span id=codelength>0</span></div><div class=informations1><label for=localstorage-check>local storage <span id=checkbox></span><input id=localstorage-check name=localstorage-check type=checkbox></label></div></div></div><div class=footer>© Ivan Brajovic</div><div id=info><div id=info-close>×</div><h3>info</h3><p>Runner is online javascript editor and runner available for blink-based browsers (for now). You can write and run javascript code with `run()` function like this :</p><code>run(1,'2',[3, 4]) // logs</code> <code>log -> 1</code> <code>log -> '2'</code> <code>log -> [3, 4]</code></div><script src=./js/highlight.js></script><script src=./js/code-e.js></script><script src=./js/aplikacija.js></script><style id=style></style><script></script>
